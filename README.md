@@ -35,8 +35,3 @@ pip install -r requirements.txt
 ./manage.py runserver
 ```
 
-- test server
-```sh
-$ curl localhost:8080
-Hello World!
-```
