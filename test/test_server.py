@@ -32,7 +32,9 @@ class MainTestCase(unittest.TestCase):
         # request /api/getResult
         app.testing = True
         client = app.test_client()
-        r = client.post('/api/getResult',data={'text': '需要注意的是'}, follow_redirects=True)
+        r = client.post('/api/getResult',
+                data=json.dumps({'text': '需要注意的是'}),
+                content_type='application/json')
         return r
     def test_route(self):
         # test /api and /api/getResult
