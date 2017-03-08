@@ -26,14 +26,8 @@ def return_json():
     '''response the post and return the result of cutting text
     post format {'text': '需要注意encode()0的是,'}
     Returns: jsonified data
-    Examples:
-        you should run server first (./manage.py runserver)
-        >>> import requests
-        >>> msg = {'text': '需要注意encode()0的是,'}
-        >>> r = requests.post("http://127.0.0.1:8080/api/getResult", data=msg)
-        >>> print(r.text)
     '''
-    text = request.form.get('text').encode('utf-8')
+    text = request.json['text'].encode('utf-8')
     # resp = make_response(jsonify(cut(text)))
     # resp.headers['Access-Control-Allow-Origin'] = '*'
     # resp.headers['Access-Control-Allow-Methods'] = 'POST'
